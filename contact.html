@@ -3,12 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact [Your Name] - Get in touch for projects and collaborations">
+    <meta name="description" content="Contact Mubashir Khan - Get in touch for projects and collaborations">
     <title>Contact | Mubashir Khan</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+       
+        
+        /* Success Bar */
+        .success-bar {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+            animation: slideIn 0.5s ease-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .success-bar i {
+            margin-right: 10px;
+        }
+        
+       
+    </style>
 </head>
 <body>
     <header class="header">
@@ -21,7 +73,6 @@
                     <li><a href="portfolio.html"><i class="fas fa-briefcase"></i> Portfolio </a></li>
                     <li><a href="services.html"><i class="fas fa-cogs"></i> Services </a></li>
                     <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact </a></li>
-
                 </ul>
                 <div class="mobile-menu-btn">
                     <span></span>
@@ -46,8 +97,6 @@
                     <h2>Contact Information</h2>
                     <p>Feel free to reach out to me for project inquiries, collaborations, or just to say hello!</p>
                     <div class="info-item">
-
-                        
                         <div class="info-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
@@ -61,8 +110,8 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="info-content">
-                            <h3>Email</h3><a href="mkfd.71gmail.com">Email Me</a>
-                            
+                            <h3>Email</h3>
+                            <a href="mailto:mkfd.71@gmail.com">Email Me</a>
                         </div>
                     </div>
                     <div class="info-item">
@@ -70,8 +119,8 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <div class="info-content">
-                            <h3>Phone</h3><a href="tel: +923460563827">Call Me</a>
-                           
+                            <h3>Phone</h3>
+                            <a href="tel:+923460563827">Call Me</a>
                         </div>
                     </div>
                     <div class="contact-social">
@@ -80,7 +129,7 @@
                             <a href="#"><i class="fab fa-linkedin"></i></a>
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-instagram"></i></a>
-                           
+                            <a href="#"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                 </div>
@@ -94,18 +143,29 @@
                         <div class="form-group">
                             <input type="email" id="email" name="email" required>
                             <label for="email">Your Email</label>
+                        </div> 
+
+                         <div class="form-group">
+                            <input type="number" id="phone" name="phone" required>
+                            <label for="phone">Phone Number</label>
                         </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" required>
-                            <label for="subject">Subject</label>
-                        </div>
+                       
                         <div class="form-group">
                             <textarea id="message" name="message" rows="5" required></textarea>
                             <label for="message">Your Message</label>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn btn-primary">
+                            <span id="submitText">Send Message</span>
+                            <span id="submitLoader" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i> Sending...
+                            </span>
+                        </button>
+                        
+                        <!-- Success Bar -->
+                        <div id="successBar" class="success-bar">
+                            <i class="fas fa-check-circle"></i> Your message has been sent successfully!
+                        </div>
                     </form>
-                    <div id="formMessage" class="form-message"></div>
                 </div>
             </div>
         </div>
@@ -117,7 +177,6 @@
         </div>
     </section>
 
-    <!-- Footer (same as index.html) -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -139,9 +198,10 @@
                     <h3>Connect</h3>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
@@ -151,6 +211,72 @@
         </div>
     </footer>
 
-    <script src="main.js"></script>
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form elements
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const submitText = document.getElementById('submitText');
+            const submitLoader = document.getElementById('submitLoader');
+            const successBar = document.getElementById('successBar');
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            submitText.style.display = 'none';
+            submitLoader.style.display = 'inline-block';
+            
+            // Prepare form data
+            const formData = {
+                'Name': form.name.value,
+                'Email': form.email.value,
+                'phone': form.phone.value,
+                'Message': form.message.value,
+                'Submission Time': new Date().toLocaleString()
+            };
+            
+            // Submit to FormSubmit
+            fetch('https://formsubmit.co/ajax/mkfd.71@gmail.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Submission successful:', data);
+                
+                // Show success bar
+                successBar.style.display = 'block';
+                
+                // Reset form
+                form.reset();
+                
+                // Hide success bar after 5 seconds
+                setTimeout(() => {
+                    successBar.style.display = 'none';
+                }, 5000);
+            })
+            .catch(error => {
+                console.error('Submission error:', error);
+                
+                // Show error message (you could create an error bar similar to the success bar)
+                alert('There was an error sending your message. Please try again.');
+            })
+            .finally(() => {
+                // Reset button state
+                submitBtn.disabled = false;
+                submitText.style.display = 'inline-block';
+                submitLoader.style.display = 'none';
+            });
+        });
+    </script>
 </body>
 </html>

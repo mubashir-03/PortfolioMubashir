@@ -1,6 +1,6 @@
 /* Global Styles */
 :root {
-    --primary-color: rgb(255, 89, 0);
+    --primary-color: #1593f3 ;
     --primary-dark:rgb(0, 0, 0);
     --secondary-color: #f59e0b;
     --dark-color: #1e293b;
@@ -395,6 +395,7 @@ section {
   
     transform: translateY(-3px);
 }
+
 
 
 /* Info Item Styles */
